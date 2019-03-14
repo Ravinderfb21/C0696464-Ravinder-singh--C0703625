@@ -59,7 +59,9 @@ namespace BankAccount.Tester
 
                 //assert is handled by the expectedException attribute on the test method.
                 StringAssert.Contains(e.Message, BankAccount.DebitAmountExceedsBalanceMessage);
+                return;
             }
+            Assert.Fail("The expected exception was not thrown.");
         }
     }
 }

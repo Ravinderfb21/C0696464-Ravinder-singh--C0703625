@@ -58,7 +58,14 @@ namespace BankAccount
                 }
                 m_balance += amount;
             }
-            private void FreezeAccount()
+
+        //
+        public void Debit(bool amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void FreezeAccount()
             {
                 m_frozen = true;
             }

@@ -39,5 +39,20 @@ namespace BankAccount.Tester
             //assert is handled by the expectedException attribute on the test method.
 }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Debit_WhenAmountIsMoreThanBalance_ShouldThrowArgumentOutOfRange()
+        {
+            //Arrange
+            double beginningBalance = 11.99;
+            double debitAmount = 12.10;
+            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+
+            //Act
+
+            account.Debit(debitAmount);
+
+            //assert is handled by the expectedException attribute on the test method.
+        }
     }
 }
